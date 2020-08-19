@@ -1,0 +1,19 @@
+name: Broadcasting
+abbreviation: brdc
+checker: codicastudio\Health\Checkers\Broadcasting
+notify: true
+column_size: 3
+error_message:
+  "The broadcasting service did not respond in time, it may be in trouble."
+targets:
+  - default:
+      channel: codicastudio-health-broadcasting-channel
+      route_name: codicastudio.health.broadcasting.callback
+      secret: "{{ \\Illuminate\\Support\\Str::random(32) }}"
+      timeout: 30
+      routes:
+        codicastudio.health.broadcasting.callback:
+          uri: "/health/broadcasting/callback/{secret}"
+          controller: codicastudio\Health\Http\Controllers\Broadcasting
+          action: callback
+      save_to: "{{ storage_path('app') }}/broadcasting.json"

@@ -1,0 +1,68 @@
+{
+    "name": "codicastudio/health",
+    "description": "A noobs worthless garbage, just learning.",
+    "keywords": [
+        "worthless garabage by a noob."
+    ],
+    "homepage": "https://github.com/codicastudio/health",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael J Brown",
+            "email": "codicastudiodev@gmail.com",
+            "homepage": "https://codicastudio.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4.8",
+        "illuminate/support": ">=5.5",
+        "codicastudio/yaml": ">=0.1",
+        "phpunit/php-timer": "^5.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=6.5",
+        "laravel/laravel": ">=5.5",
+        "orchestra/testbench": ">=3.5",
+        "guzzlehttp/guzzle": ">=6.0",
+        "docusign/esign-client": ">=2.0",
+        "predis/predis": ">=1.0",
+        "sensiolabs/security-checker": ">=4.1",
+        "nesbot/carbon": ">=1.34"
+    },
+    "suggest": {
+        "guzzlehttp/guzzle": ">=6.0",
+        "docusign/esign-client": ">=2.0",
+        "predis/predis": ">=1.0",
+        "league/flysystem-aws-s3-v3": ">=1.0",
+        "sensiolabs/security-checker": ">=4.1"
+    },
+    "autoload": {
+        "files": [
+            "src/Support/Throwable.php",
+            "src/Support/helpers.php"
+        ],
+        "psr-4": {
+            "codicastudio\\Health\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "codicastudio\\Health\\Tests\\PhpUnit\\": "tests/PhpUnit/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "codicastudio\\Health\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": [
+            "@composer install",
+            "vendor/bin/phpunit"
+        ]
+    }
+}
