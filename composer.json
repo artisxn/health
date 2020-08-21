@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": "^7.4.8",
+        "php": "^7.4.0",
         "illuminate/support": ">=5.5",
         "codicastudio/yaml": ">=0.1",
         "phpunit/php-timer": "^5.0",
